@@ -1,1 +1,22 @@
-init commit
+-----
+Downloading tweets (doesn't not require node):
+sh getTweets.sh
+
+- This will create a folder called tweetData where tweets are spread across files, 200 each.
+
+-----
+Converting google transit file spec into a file with just the contents we need (requires node and npm)
+
+Install node http://nodejs.org/#download
+Install npm http://npmjs.org/
+
+Go into node folder. run
+|npm install
+If I have specified the dependencies right, this is all you need to do. If not, you will see a "xxx module not found". In that case you can do a "npm install xxx" (but report it so I can fix package.json)
+Now run
+|node processGTFS.js
+You will get a HUGE data file called stationKey.json. If you have textmate, open the file and see textmate struggle.
+
+-----
+DON'T PANIC
+-----

@@ -1,15 +1,19 @@
 {
-  "author": "",
+  "author": "indianburger",
   "name": "caltrain",
   "description": "caltrain app",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": {
-    "url": ""
+    "url": "https://github.com/indianburger/caltrain"
   },
   "main": "process.js",
   "engines": {
     "node": "~v0.4.10"
   },
-  "dependencies": {},
+  "dependencies": {
+      "underscore" : ">=1.1.7",
+      "request" : ">=2.1.1",
+      "csv" : "0.0.10"
+  },
   "devDependencies": {}
 }

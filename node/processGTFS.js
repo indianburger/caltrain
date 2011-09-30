@@ -25,7 +25,6 @@ var createCustomData = function() {
                 departureTimeIndex = data.indexOf("departure_time");
                 tripIdIndex = 0; //wtf don't know why this won't work: data.indexOf("trip_id"); //train number is part of this
             } else {
-                console.log("data: " + arrivalTimeIndex);
                 var customDataObject = {
                     arrivalTime : data[arrivalTimeIndex],
                     departureTime : data[departureTimeIndex],
@@ -33,9 +32,7 @@ var createCustomData = function() {
                 };
                 
                 var stationName = data[stopIdIndex];
-                // console.log("obj: " + stationName + ".." + JSON.stringify(customDataObject));
                 var existingStationObjects = stationAsKey[stationName];
-                // console.log("exi:" + existingStationObjects);
 
                 if ( existingStationObjects ){
                     existingStationObjects.push(customDataObject);
@@ -46,7 +43,13 @@ var createCustomData = function() {
             }
         }).
         on("end", function() {
-            fs.writeFile("../data/stationKey.json", JSON.stringify(stationAsKey));
+            fs.writeFile("stationKey.json", JSON.stringify(stationAsKey), function(err) {
+                if (err) {
+                    throw err;
+                } else {
+                    console.log("stationKey.json created");
+                }
+            });
         });
 };
 
@@ -72,5 +75,4 @@ var main = function(err) {
     
 };
 
-// process.exec("rm -rf google_transit.zip gtfs", main);
-createCustomData();
+process.exec("rm -rf google_transit.zip gtfs", main);

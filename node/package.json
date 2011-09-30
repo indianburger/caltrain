@@ -1,0 +1,15 @@
+{
+  "author": "",
+  "name": "caltrain",
+  "description": "caltrain app",
+  "version": "0.0.0",
+  "repository": {
+    "url": ""
+  },
+  "main": "process.js",
+  "engines": {
+    "node": "~v0.4.10"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

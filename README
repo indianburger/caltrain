@@ -1,6 +1,6 @@
 -----
 Downloading tweets (doesn't not require node):
-sh getTweets.sh
+|sh getTweets.sh
 
 - This will create a folder called tweetData where tweets are spread across files, 200 each.
 
